@@ -1,13 +1,9 @@
 :root {
   --bg: #ffffff;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --strike: #bebebe;
-  --accent: #0b6efd;
-  --card-bg: #fafafa;
-  --card-border: #e5e5e5;
-  --radius: 12px;
-  --max-width: 720px;
+  --text: #000000;
+  --body-text: #333333;
+  --strike: #bdbdbd;
+  --link: #1e73be;
 }
 
 * {
@@ -20,145 +16,109 @@ html, body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color: var(--text);
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: var(--body-text);
   background: var(--bg);
-  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
 main {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px 80px;
-}
-
-.banner {
-  margin: 0 -24px 0;
-  height: 180px;
-  overflow: hidden;
-}
-
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.profile {
-  display: flex;
-  justify-content: center;
-  margin-top: -72px;
-  margin-bottom: 24px;
+  max-width: 1500px;
+  padding: 128px 56px 96px;
 }
 
 .avatar {
-  width: 144px;
-  height: 144px;
+  display: block;
+  width: 290px;
+  height: 290px;
   border-radius: 50%;
-  border: 4px solid var(--bg);
   object-fit: cover;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
 }
 
-.intro h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0 0 16px;
-  text-align: center;
+h1, h2, .headline {
+  font-family: "Bebas Neue", "Oswald", Impact, sans-serif;
+  font-weight: 400;
+  color: var(--text);
+  text-transform: uppercase;
+  line-height: 1.25;
 }
 
-.intro p {
-  font-size: 1.1rem;
-  margin: 0 0 20px;
-  text-align: center;
+h1, h2 {
+  font-size: 3.25rem;
+  margin: 0 0 32px;
 }
 
-.intro del {
+.headline {
+  font-size: 3.6rem;
+  margin: 0 0 32px;
+  max-width: 1440px;
+}
+
+.headline del {
   color: var(--strike);
 }
 
+.connect,
+.projects {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
 .connect {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  align-items: center;
+  margin: 0 0 88px;
 }
 
-.connect span {
-  color: var(--muted);
-}
-
-.connect a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.connect a:hover {
+a {
+  color: var(--link);
+  font-weight: 700;
   text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
 .projects {
-  margin-top: 64px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.projects h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0 0 20px;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+.projects li + li {
+  margin-top: 8px;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 560px) {
-  .project-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 700px) {
+  main {
+    padding: 56px 20px 64px;
   }
-}
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
+  .avatar {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 28px;
+  }
 
-.project-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  border-color: #d0d0d0;
-}
+  h1, h2 {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+  }
 
-.project-card h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin: 0 0 6px;
-}
+  .headline {
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+  }
 
-.project-card p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin: 0 0 16px;
-  flex-grow: 1;
-}
+  .connect,
+  .projects {
+    font-size: 1.15rem;
+  }
 
-.project-cta {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent);
+  .connect {
+    margin-bottom: 56px;
+  }
 }
